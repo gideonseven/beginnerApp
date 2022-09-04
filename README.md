@@ -14,6 +14,7 @@ Current Branch is recyclerview
 | ------ | ------ |
 | Initial Ui | default project setting |
 | recyclerview | 1.2.1 |
+| retrofit | 2.9.0 |
 
 ## Additional Dependencies
 | implementation | version |
