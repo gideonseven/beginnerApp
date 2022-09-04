@@ -1,3 +1,5 @@
+# CURRENTLY ON PROGRESS
+
 # Beginner App
 > purpose of this project is to let people learn implementing dependency / api step by step.
 > follow along with numbered branch : 1. 2. 3. and so on
