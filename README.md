@@ -8,6 +8,11 @@
 Current Branch is recyclerview
 ```
 
+## Screenshot
+```
+It is basically NewProject-> Phone and Tablet -> Basic Activity
+```
+<img src="images/initial_ui.webp" width=200/>
 
 ## Whats in this branch
 | implementation | version |
