@@ -10,9 +10,9 @@ Current Branch is recyclerview
 
 ## Screenshot
 ```
-It is basically NewProject-> Phone and Tablet -> Basic Activity
+Add Dummy Item to RecyclerView
 ```
-<img src="images/initial_ui.webp" width=200/>
+<img src="images/2.recyclerview.webp" width=200/>
 
 ## Whats in this branch
 | implementation | version |
