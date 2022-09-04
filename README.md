@@ -5,13 +5,15 @@
 
 ## Current Branch
 ```sh
-Current Branch is recyclerview
+Current Branch is retrofit
 ```
 
 ## Screenshot
 ```
-Add Dummy Item to RecyclerView
+Request Data from API ballDontlie
+GET https://www.balldontlie.io/api/v1/games
 ```
+
 <img src="images/3.retrofit.webp" width=200/>
 
 ## Whats in this branch
