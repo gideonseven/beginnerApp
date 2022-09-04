@@ -5,14 +5,15 @@
 
 ## Current Branch
 ```sh
-Current Branch is Inital UI
+Current Branch is recyclerview
 ```
 
 
 ## Whats in this branch
-| implementation | package |
+| implementation | version |
 | ------ | ------ |
 | Initial Ui |  |
+| recyclerview | 1.2.1 |
 
 
 
