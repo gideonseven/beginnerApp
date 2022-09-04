@@ -12,7 +12,7 @@ Current Branch is recyclerview
 ```
 Add Dummy Item to RecyclerView
 ```
-<img src="images/2.recyclerview.webp" width=200/>
+<img src="images/3.retrofit.webp" width=200/>
 
 ## Whats in this branch
 | implementation | version |
@@ -20,6 +20,9 @@ Add Dummy Item to RecyclerView
 | Initial Ui | default project setting |
 | recyclerview | 1.2.1 |
 | retrofit | 2.9.0 |
+| -> retrofit converter moshi | 2.9.0 |
+| -> moshi-kotlin | 1.13.0 |
+
 
 ## Additional Dependencies
 | implementation | version |

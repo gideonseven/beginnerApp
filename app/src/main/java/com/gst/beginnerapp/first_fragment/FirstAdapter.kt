@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gst.beginnerapp.R
 import com.gst.beginnerapp.databinding.ItemRecyclerviewBinding
+import com.gst.beginnerapp.model.Game
 
 
 /**
@@ -14,7 +15,7 @@ import com.gst.beginnerapp.databinding.ItemRecyclerviewBinding
  */
 class FirstAdapter : RecyclerView.Adapter<FirstAdapter.ItemViewHolder>() {
 
-    private val listItem = arrayListOf<ModelData>()
+    private val listItem = arrayListOf<Game>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
@@ -31,7 +32,7 @@ class FirstAdapter : RecyclerView.Adapter<FirstAdapter.ItemViewHolder>() {
 
     override fun getItemCount() = listItem.size
 
-    fun updateData(list: ArrayList<ModelData>) {
+    fun updateData(list: ArrayList<Game>) {
         listItem.clear()
         listItem.addAll(list)
         notifyItemRangeChanged(0, list.size)
@@ -39,8 +40,11 @@ class FirstAdapter : RecyclerView.Adapter<FirstAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(private val binding: ItemRecyclerviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ModelData) {
-            binding.tv.text = item.title
+        fun bind(item: Game) {
+            val homeTeam = item.homeTeam
+            val visitorTeam = item.visitorTeam
+            val combinedString = "${visitorTeam?.name} vs ${homeTeam?.name} "
+            binding.tv.text = combinedString
         }
     }
 }
