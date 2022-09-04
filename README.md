@@ -8,6 +8,11 @@
 Current Branch is recyclerview
 ```
 
+## Screenshot
+```
+Add Dummy Item to RecyclerView
+```
+<img src="images/2.recyclerview.webp" width=200/>
 
 ## Whats in this branch
 | implementation | version |
