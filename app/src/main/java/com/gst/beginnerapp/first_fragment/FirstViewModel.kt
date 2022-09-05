@@ -1,7 +1,9 @@
 package com.gst.beginnerapp.first_fragment
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gst.beginnerapp.model.Game
 import com.gst.beginnerapp.model.GamesResponse
 import com.gst.beginnerapp.retrofit.ApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,28 +22,38 @@ import javax.inject.Inject
 @HiltViewModel
 class FirstViewModel @Inject constructor(
     private val apiService: ApiService
-): ViewModel(){
+) : ViewModel() {
 
-    private fun getGames(){
-/*        apiService.getGames()?.enqueue(object : Callback<GamesResponse> {
+    companion object {
+        private val TAG = FirstViewModel::class.java.simpleName.toString()
+    }
+
+    val gameList: MutableLiveData<ArrayList<Game>> =
+        MutableLiveData<ArrayList<Game>>().apply { value = null }
+
+    init {
+        getGames()
+    }
+
+    private fun getGames() {
+        apiService.getGames()?.enqueue(object : Callback<GamesResponse> {
             override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
-
                 response.body()?.data?.let { listGame ->
-                    Log.e(FirstFragment.TAG, "$listGame")
+                    Log.e(TAG, "$listGame")
 
                     for (game in listGame) {
-                        Log.e(FirstFragment.TAG, "${game.date}")
+                        Log.e(TAG, "${game.date}")
                     }
 
-                    gameList.addAll(listGame)
-                    mAdapter.updateData(gameList)
+                    val arrayListGame = arrayListOf<Game>()
+                    arrayListGame.addAll(listGame)
+                    gameList.postValue(arrayListGame)
                 }
             }
 
             override fun onFailure(call: Call<GamesResponse>, t: Throwable) {
-                Log.e(FirstFragment.TAG, "${t.message}")
+                Log.e(TAG, "${t.message}")
             }
-        })*/
-
+        })
     }
 }
