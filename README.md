@@ -1,4 +1,8 @@
-# CURRENTLY ON PROGRESS
+# Next Implementation
+## 6. paging
+## 7. coroutine
+## 8. room
+## 9. mvvm
 
 # Beginner App
 > purpose of this project is to let people learn implementing dependency / api step by step.
