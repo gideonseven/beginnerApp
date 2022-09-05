@@ -54,7 +54,7 @@ class FirstFragment : Fragment() {
             override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
 
                 response.body()?.data?.let { listGame ->
-                    Log.e(TAG, "${listGame}")
+                    Log.e(TAG, "$listGame")
 
                     for (game in listGame) {
                         Log.e(TAG, "${game.date}")

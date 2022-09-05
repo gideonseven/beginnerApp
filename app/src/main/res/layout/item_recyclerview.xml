@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_8dp">
+        android:layout_marginHorizontal="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_8dp"
+        app:cardBackgroundColor="@color/blue_50"
+        app:cardCornerRadius="@dimen/_8dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_visitor"
-            android:layout_width="@dimen/_50dp"
-            android:layout_height="@dimen/_50dp"
-            android:layout_alignParentStart="true"
-            android:background="@color/red_300" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="@dimen/_8dp"
-            android:layout_toStartOf="@+id/iv_home"
-            android:layout_toEndOf="@+id/iv_visitor"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:lines="2"
-            android:text="@string/title_here"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/_18sp" />
+            android:layout_margin="@dimen/_8dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_home"
-            android:layout_width="@dimen/_50dp"
-            android:layout_height="@dimen/_50dp"
-            android:layout_alignParentEnd="true"
-            android:background="@color/green_300" />
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_visitor"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_alignParentStart="true"
+                android:background="@color/red_300" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_8dp"
+                android:layout_toStartOf="@+id/iv_home"
+                android:layout_toEndOf="@+id/iv_visitor"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="2"
+                android:text="@string/title_here"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_18sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_home"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_alignParentEnd="true"
+                android:background="@color/green_300" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
