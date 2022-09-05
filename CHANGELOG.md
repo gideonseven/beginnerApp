@@ -1,3 +1,7 @@
+#900000004---0.0.4 ===> 05/09/2022
+- implement dagger
+- implement livedata
+
 #900000003---0.0.3 ===> 05/09/2022
 - implement retrofit
 - consume api from ballsdontlie.com

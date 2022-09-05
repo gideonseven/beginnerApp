@@ -1,22 +1,18 @@
 package com.gst.beginnerapp.first_fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.gst.beginnerapp.databinding.FragmentFirstBinding
-import com.gst.beginnerapp.model.Game
-import com.gst.beginnerapp.model.GamesResponse
-import com.gst.beginnerapp.retrofit.RetrofitBuilder
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
 
@@ -28,11 +24,11 @@ class FirstFragment : Fragment() {
         FirstAdapter()
     }
 
-    companion object{
+    private val viewModel: FirstViewModel by viewModels()
+
+    companion object {
         private const val TAG = "FIRST FRAGMENT => "
     }
-
-    private val gameList = arrayListOf<Game>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,34 +37,20 @@ class FirstFragment : Fragment() {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            with(rv){
+            with(rv) {
                 adapter = mAdapter
             }
         }
 
-        val repos = RetrofitBuilder.service.getGames()
-        repos?.enqueue(object : Callback<GamesResponse>{
-            override fun onResponse(call: Call<GamesResponse>, response: Response<GamesResponse>) {
-
-                response.body()?.data?.let { listGame ->
-                    Log.e(TAG, "${listGame}")
-
-                    for (game in listGame) {
-                        Log.e(TAG, "${game.date}")
-                    }
-
-                    gameList.addAll(listGame)
-                    mAdapter.updateData(gameList)
-                }
+        viewModel.gameList.observe(viewLifecycleOwner) { listGame ->
+            listGame?.let {
+                mAdapter.updateData(it)
             }
-
-            override fun onFailure(call: Call<GamesResponse>, t: Throwable) {
-                Log.e(TAG, "${t.message}")
-            }
-        })
+        }
     }
 
     override fun onDestroyView() {

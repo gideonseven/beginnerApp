@@ -7,7 +7,7 @@
 
 ## Current Branch
 ```sh
-Current Branch is retrofit
+Current Branch is dagger
 ```
 
 ## Screenshot
@@ -16,7 +16,7 @@ Request Data from API ballDontlie
 GET https://www.balldontlie.io/api/v1/games
 ```
 
-<img src="images/3.retrofit.webp" width=200/>
+<img src="images/4.dagger.webp" width=200/>
 
 ## Whats in this branch
 | implementation | version |
@@ -26,6 +26,8 @@ GET https://www.balldontlie.io/api/v1/games
 | retrofit | 2.9.0 |
 | -> retrofit converter moshi | 2.9.0 |
 | -> moshi-kotlin | 1.13.0 |
+| dagger:hilt-android | 2.43.2 |
+| -> hilt-android-compiler| 2.43.2 |
 
 
 ## Additional Dependencies
@@ -36,6 +38,7 @@ GET https://www.balldontlie.io/api/v1/games
 | material | 1.6.1 |
 | constraintLayout | 2.1.4 |
 | navigation | 2.5.1 |
+| livedata | 2.5.1 |
 
 
 ## ✨Happy coding ✨

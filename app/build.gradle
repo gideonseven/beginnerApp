@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
 }
 
 android {
@@ -40,9 +42,16 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.6.1'
+
+    // androidx constraintLayout
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // androidx navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
+
+    // androidx livedata
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
     // RecyclerView
     implementation "androidx.recyclerview:recyclerview:1.2.1"
@@ -54,4 +63,10 @@ dependencies {
     //Moshi Reflection
     // use for moshi `KotlinJsonAdapterFactory()`
     implementation "com.squareup.moshi:moshi-kotlin:1.13.0"
+
+    // dagger-hilt
+    implementation 'com.google.dagger:hilt-android:2.43.2'
+    kapt 'com.google.dagger:hilt-android-compiler:2.43.2'
+
+
 }
