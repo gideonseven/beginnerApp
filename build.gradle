@@ -11,6 +11,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.43.2'
     }
 }
 
@@ -26,6 +28,6 @@ task clean(type: Delete) {
 }
 
 ext {
-    version_code = 900000000
-    version_name = '0.0.1'
+    version_code = 900000004
+    version_name = '0.0.4'
 }
